@@ -146,8 +146,7 @@ div.ingredient{
 
 div.sidebar{
 	position: fixed;
-	top: 0;
-	left: 0;
+	top: 0;	
 	width: 50vw;
 	height: 100vh;
 	background: @PrimaryLight;
@@ -155,6 +154,14 @@ div.sidebar{
 	.AnimateAll();
 	z-index: 50;
 }
+
+	div.sidebar-open{
+		left: 0;
+	}
+
+	div.sidebar-close{
+		left: -52vw;
+	}
 
 button#openButton{
 	background: green;
