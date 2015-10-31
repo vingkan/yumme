@@ -14,7 +14,7 @@ PrepSpace.prototype.toHTML = function(){
 	html += 'id="' + this.id + '" ';
 	html += 'style="background-image: url(' + this.image + ');"';
 	html += '>';
-	html += '<label>' + this.name + '</label>';
+	html += '<span class="label">' + this.name + '</span>';
 	html += '</div>';
 	return html;
 }

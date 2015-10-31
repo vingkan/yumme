@@ -8,6 +8,7 @@
 @PrimaryDark: darken(@PrimaryColor, 10%);
 //Additional Colors
 @Charcoal: #1a1a1a;
+@BananaYellow: #FFD01F;
 
 /*--------------------------------------------*/
 /*---> FONTS <--------------------------------*/
@@ -23,7 +24,7 @@
 /*---> TEXT <---------------------------------*/
 /*--------------------------------------------*/
 
-h1, h2, h3, h4, h5, h6, p, label{
+h1, h2, h3, h4, h5, h6, p, span{
 	font-family: @BodyFont;
 	font-size: @TextSize;
 	text-align: center;
@@ -109,9 +110,10 @@ div.location{
 	width: 90vw;
 	height: 48vw;
 	margin: 5vw auto;
+	border-top: (0.15 * @TextSize) solid @PrimaryDark;
 
-	label{
-		background: @Charcoal;
+	span.label{
+		background: @PrimaryDark;
 		padding: 0 0.5 * @TextSize;
 		border-bottom: (0.15 * @TextSize) solid white;
 		margin: 0 (0.5 * @TextSize);
@@ -119,6 +121,14 @@ div.location{
 		font-family: @DisplayFont;
 		font-size: 0.5 * @TextSize;
 		color: white;
+	}
+
+	div.ingredient{
+
+		span.label{
+			background: @Charcoal;
+		}
+
 	}
 	
 	.CoverBackground();
@@ -131,11 +141,13 @@ div.ingredient{
 	height: 2.0 * @TextSize;
 	margin: 0.5 * @TextSize;
 
-	label{
-		margin-top: 0.75 * @TextSize;
+	span.label{
+		background: @PrimaryDark;
+		color: white;
+		padding: 0.25 * @TextSize;
+		margin-top: 0.625 * @TextSize;
 		margin-left: 2.25 * @TextSize;
 		position: absolute;
-		background: transparent;
 		border: none;
 		font-size: 0.5 * @TextSize;
 		text-align: center;
@@ -154,7 +166,8 @@ div.sidebar{
 	top: 0;	
 	width: 50vw;
 	height: 100vh;
-	background: @PrimaryColor;
+	background: white;
+	color: @PrimaryDark;
 	border-right: 2vw solid @PrimaryDark;
 	.AnimateAll();
 	z-index: 50;
@@ -170,19 +183,24 @@ div.sidebar{
 
 header{
 
+	width: 96vw;
+	padding: 2vw;
+
 	@headerHeight: 2.0 * @TextSize;
-	background: @PrimaryDark;
+	background: @PrimaryColor;
+	border-bottom: 2vw solid @PrimaryDark;
 
 	img.logo{
 		height: @headerHeight;
 	}
 
 	button{
-		background: @PrimaryColor;
+		background: @PrimaryDark;
 		width: 2.0 * @TextSize;
 		height: 2.0 * @TextSize;
 		line-height: 2.0 * @TextSize;
 		border-radius: 1.0 * @TextSize;
+		position: fixed;
 	}
 
 }
