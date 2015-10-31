@@ -21,7 +21,9 @@
 		<!-- IMPORTS -->
 		<script src="imports/jquery-1.11.3.min.js"></script>
 		<script src="imports/howler.js"></script>
-		<script src="imports/enchant.js"></script>
+			<!-- ENCHANT -->
+			<script src="enchant/js/lib/enchant.js"></script>
+			<script src="enchant/js/main.js"></script>
 		<!-- VIEW -->
 		<!-- APPLICATION -->
 		<script src="application/nutrients.js"></script>
@@ -30,14 +32,7 @@
 
 		<script type="text/javascript">
 
-			enchant();
-			window.onload = function(){
-				var game = new Game(320, 320);
-				game.onload = function(){
-					console.log("started!")
-				};
-				game.start();
-			}
+
 
 		</script>
 		
