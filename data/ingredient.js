@@ -13,8 +13,8 @@ Ingredient.prototype.toHTML = function(){
 	html += '<div class="ingredient" ';
 	html += 'id="' + this.id + '" ';
 	html += 'style="background-image: url(' + this.image + ');"';
-	html += '>'
+	html += '>';
 	html += '<label>' + this.name + '</label>';
-	html += '</div>'
+	html += '</div>';
 	return html;
 }

@@ -36,12 +36,12 @@
 
 		<script type="text/javascript">
 
-		var table = new PrepSpace({
-			name: 'Table',
-			id: 'table',
-			image: 'style/img/table.jpg'
+		var plate = new PrepSpace({
+			name: 'My Plate',
+			id: 'plate',
+			image: 'style/img/plate.png'
 		});
-		document.getElementById('locationSpace').innerHTML += table.toHTML();
+		document.getElementById('locationSpace').innerHTML += plate.toHTML();
 
 		var sink = new PrepSpace({
 			name: 'Sink',
@@ -56,15 +56,20 @@
 			id: 'strawberry',
 			image: 'style/img/strawberry.png'
 		});
-		document.getElementById('table').innerHTML += strawberry.toHTML();
+		document.getElementById('plate').innerHTML += strawberry.toHTML();
 
-		$('#strawberry').draggable();
-		$('#strawberry').droppable({
-				drop: function(event, ui){
-					$(this)
-					.addClass("location")
-					.html("Dropped!");
-				}
+		$('#' + strawberry.id).draggable();
+		$('#' + sink.id).droppable({
+			accept: '.ingredient',
+			drop: function(event, ui){
+				console.log(ui.draggable.html())
+
+				$(this).append(ui.draggable.html());
+				
+				/*$(this)
+				.addClass("location")
+				.html("Dropped!");*/
+			}
 		});
 
 		</script>
