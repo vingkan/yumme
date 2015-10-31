@@ -82,6 +82,28 @@ button{
 /*--------------------------------------------*/
 
 div.location{
-	width: 200px;
-	height: 300px;
+
+	width: 90vw;
+	height: 40vh;
+	margin: 0 auto;
+
+	label{
+		background: @Charcoal;
+		padding: 0 0.5 * @TextSize;
+		border-bottom: (0.15 * @TextSize) solid white;
+		margin: 0 (0.5 * @TextSize);
+		//Text Style
+		font-family: @DisplayFont;
+		font-size: @TextSize;
+		color: white;
+	}
+	
+	//background-image property filled in by HTML
+	background-repeat: no-repeat;
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
 }
