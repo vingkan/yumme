@@ -24,23 +24,29 @@
 /*--------------------------------------------*/
 
 h1, h2, h3, h4, h5, h6, p{
-
+	font-size: @TextSize;
+	text-align: center;
 }
 
-h1{
+h1, h2, h3, h4, h5, h6{
+	font-family: @DisplayFont;
+	font-weight: bold;
+} 
 
+h1{
+	font-size: 2.0 * @TextSize;
 }
 
 h2{
-
+	font-size: 1.75 * @TextSize;
 }
 
 h3{
-
+	font-size: 1.5 * @TextSize;
 }
 
 p{
-
+	font-family: @BodyFont;
 }
 
 /*--------------------------------------------*/
@@ -48,7 +54,7 @@ p{
 /*--------------------------------------------*/
 
 html{
-
+	background: @PrimaryColor;
 }
 
 /*--------------------------------------------*/
@@ -64,7 +70,7 @@ input{
 }
 
 button{
-	
+
 }
 
 /*--------------------------------------------*/
