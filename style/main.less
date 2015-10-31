@@ -23,7 +23,8 @@
 /*---> TEXT <---------------------------------*/
 /*--------------------------------------------*/
 
-h1, h2, h3, h4, h5, h6, p{
+h1, h2, h3, h4, h5, h6, p, label{
+	font-family: @BodyFont;
 	font-size: @TextSize;
 	text-align: center;
 }
@@ -116,14 +117,15 @@ div.ingredient{
 
 	width: 2.0 * @TextSize;
 	height: 2.0 * @TextSize;
-	margin: 100px;
+	margin: 0.5 * @TextSize;
 
 	label{
+		margin-top: 0.75 * @TextSize;
+		margin-left: 2.25 * @TextSize;
 		position: absolute;
-		margin-top: 10px;
 		background: transparent;
 		border: none;
-		font-size: @TextSize;
+		font-size: 0.5 * @TextSize;
 		text-align: center;
 	}
 

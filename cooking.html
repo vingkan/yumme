@@ -30,6 +30,7 @@
 		<script src="imports/touchpunch.js"></script>
 		<script src="imports/howler.js"></script>
 		<!-- VIEW -->
+		<script src="view/view.js"></script>
 		<!-- APPLICATION -->
 		<script src="application/nutrients.js"></script>
 		<!-- DATA -->
@@ -68,7 +69,15 @@
 		});
 		document.getElementById('bar').innerHTML += strawberry.toHTML();
 
+		var honey = new Ingredient({
+			name: 'Honey',
+			id: 'honey',
+			image: 'style/img/honey.png'
+		});
+		document.getElementById('bar').innerHTML += honey.toHTML();
+
 		$('#' + strawberry.id).draggable();
+		$('#' + honey.id).draggable();
 		acceptDrops('plate')
 		acceptDrops('sink')
 		acceptDrops('table')
