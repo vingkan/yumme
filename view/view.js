@@ -7,6 +7,7 @@ function closeAllSideBars(){
 }
 
 function toggleSideBar(sideBarID, forceClose){
+	toggleMenu('options', true);
 	var sideBar = $('#' + sideBarID);
 	if(forceClose){
 		sideBar.removeClass('sidebar-open');
@@ -20,6 +21,24 @@ function toggleSideBar(sideBarID, forceClose){
 		else{
 			sideBar.removeClass('sidebar-close');
 			sideBar.addClass('sidebar-open');
+		}
+	}
+}
+
+function toggleMenu(menuID, forceClose){
+	var menu = $('#' + menuID);
+	if(forceClose){
+		menu.removeClass('options-open');
+		menu.addClass('options-close');
+	}
+	else{
+		if(menu.hasClass('options-open')){
+			menu.removeClass('options-open');
+			menu.addClass('options-close');
+		}
+		else{
+			menu.removeClass('options-close');
+			menu.addClass('options-open');
 		}
 	}
 }

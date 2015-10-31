@@ -48,7 +48,9 @@ h3{
 }
 
 p{
+	width: 90%;
 	font-family: @BodyFont;
+	margin: (0.5 * @TextSize) 5%;
 }
 
 /*--------------------------------------------*/
@@ -199,12 +201,12 @@ div.sidebar{
 		left: -52vw;
 	}
 
+@headerHeight: 2.0 * @TextSize;
+
 header{
 
 	width: 96vw;
 	padding: 2vw;
-
-	@headerHeight: 2.0 * @TextSize;
 	background: @PrimaryColor;
 	border-bottom: 2vw solid @PrimaryDark;
 
@@ -212,7 +214,7 @@ header{
 		height: @headerHeight;
 	}
 
-	button{
+	button#openMenu{
 		background: @PrimaryDark;
 		width: 2.0 * @TextSize;
 		height: 2.0 * @TextSize;
@@ -223,3 +225,39 @@ header{
 
 }
 
+div#options{
+
+	position: fixed;
+	background: transparent;
+	width: 80vw;
+	height: auto;
+	left: 8vw;
+
+	button.menuOption{
+
+		width: 100%;
+		margin: 0.25 * @TextSize 0;
+		color: @PrimaryDark;
+		background: white;
+		border-left: (0.5 * @TextSize) solid @PrimaryDark;
+		
+		&:hover{
+			background: @PrimaryDark;
+			color: white;
+		}
+
+		.AnimateAll();
+
+	}
+
+	.AnimateAll();
+
+}
+
+div.options-open{
+	top: 20vh;
+}
+
+div.options-close{
+	top: -50vh;
+}
