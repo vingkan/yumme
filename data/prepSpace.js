@@ -28,6 +28,7 @@ function acceptDrops(targetID){
 			var toDrop = getIngredient(dropID);
 			$(this).append(toDrop.toHTML());
 			$('#' + dropID).draggable();
+			closeAllSideBars();
 		}
 	});
 	console.log('enabled drops on: ' + targetID);

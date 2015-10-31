@@ -1,4 +1,10 @@
-document.getElementById('cart').style.left = "-52vw";
+function closeAllSideBars(){
+	var sidebars = document.getElementsByClassName('sidebar');
+	var size = sidebars.length;
+	for(var s = 0; s < size; s++){
+		sidebars[s].style.left = '-52vw';
+	}
+}
 
 function toggleSideBar(sideBarID){
 	var sideBar = document.getElementById(sideBarID);
