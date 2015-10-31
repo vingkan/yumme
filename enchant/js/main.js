@@ -1,21 +1,26 @@
 enchant();
 
 window.onload = function(){
-	var game = new Game(320, 320);
+	var game = new Game(320, 440);
 	
-	game.preload('enchant/res/BG.png');
+	var bgPath = 'enchant/res/BG.png';
+	game.preload(bgPath);
 	game.fps = 30;
 	game.scale = 1;
 	
 	game.onload = function(){
 		console.log("Game Initialized");
 
-		/*var scene = new Scene();
-		game.pushScene(scene);
+		var scene, label, bg;
 
-		var sprite = new Sprite(64, 64);
-		//sprite.image = game.assets['style/img/strawberry..png']
-		scene.addChild(sprite);*/
+		scene = new Scene();
+		label = new Label("Label");
+		bg = new Sprite(320, 440);
+		bg.image = game.assets[bgPath];
+
+		scene.addChild(bg);
+		scene.addChild(label);
+		game.pushScene(scene);
 
 	};
 	game.start();
