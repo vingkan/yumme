@@ -18,6 +18,10 @@
 		<h1>Yumme</h1>
 		<p>A mobile app to gamify shopping for healthy foods and reward users with discounts and special offers.</p>
 
+		<div class="sidebar" id="bar">
+			<label>Ingredients</label>
+		</div>
+
 		<div id="locationSpace"></div>
 		
 		<!-- IMPORTS -->
@@ -42,7 +46,6 @@
 			image: 'style/img/plate.png'
 		});
 		document.getElementById('locationSpace').innerHTML += plate.toHTML();
-		plate.acceptDrops();
 
 		var sink = new PrepSpace({
 			name: 'Sink',
@@ -50,24 +53,25 @@
 			image: 'style/img/sink.png'
 		});
 		document.getElementById('locationSpace').innerHTML += sink.toHTML();
-		sink.acceptDrops();
 
-		var table = new PrepSpace({
+		var table = new PrepSpace({
 			name: 'Table',
 			id: 'table',
 			image: 'style/img/table.jpg'
 		});
 		document.getElementById('locationSpace').innerHTML += table.toHTML();
-		table.acceptDrops();
 
 		var strawberry = new Ingredient({
 			name: 'Strawberry',
 			id: 'strawberry',
 			image: 'style/img/strawberry.png'
 		});
-		document.getElementById('plate').innerHTML += strawberry.toHTML();
+		document.getElementById('bar').innerHTML += strawberry.toHTML();
 
 		$('#' + strawberry.id).draggable();
+		acceptDrops('plate')
+		acceptDrops('sink')
+		acceptDrops('table')
 
 		</script>
 		

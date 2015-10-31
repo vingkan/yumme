@@ -32,7 +32,3 @@ function acceptDrops(targetID){
 	});
 	console.log('enabled drops on: ' + targetID);
 }
-
-PrepSpace.prototype.acceptDrops = function(){
-	acceptDrops(this.id)
-}

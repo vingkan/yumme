@@ -57,6 +57,16 @@ html{
 	background: @PrimaryColor;
 }
 
+.CoverBackground(){
+	//background-image property filled in by HTML
+	background-repeat: no-repeat;
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
 /*--------------------------------------------*/
 /*---> FORMS <--------------------------------*/
 /*--------------------------------------------*/
@@ -78,18 +88,8 @@ button{
 /*--------------------------------------------*/
 
 /*--------------------------------------------*/
-/*---> EXPERIMENTAL <-------------------------*/
+/*---> COOKING <------------------------------*/
 /*--------------------------------------------*/
-
-.CoverBackground(){
-	//background-image property filled in by HTML
-	background-repeat: no-repeat;
-	background-position: center center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
 
 div.location{
 
@@ -129,4 +129,18 @@ div.ingredient{
 
 	.CoverBackground();
 
+}
+
+/*--------------------------------------------*/
+/*---> EXPERIMENTAL <-------------------------*/
+/*--------------------------------------------*/
+
+div.sidebar{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 50vw;
+	height: 100vh;
+	background: white;
+	border-right: 2vw solid @PrimaryDark;
 }
