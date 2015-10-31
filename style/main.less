@@ -88,6 +88,11 @@ button{
 /*---> ANIMATIONS <---------------------------*/
 /*--------------------------------------------*/
 
+.AnimateAll(@time: 0.5s){
+	transition: all @time ease;
+	-webkit-transition: all @time ease;
+}
+
 /*--------------------------------------------*/
 /*---> COOKING <------------------------------*/
 /*--------------------------------------------*/
@@ -145,4 +150,10 @@ div.sidebar{
 	height: 100vh;
 	background: @PrimaryLight;
 	border-right: 2vw solid @PrimaryDark;
+	.AnimateAll();
+	z-index: 50;
+}
+
+button#openButton{
+
 }

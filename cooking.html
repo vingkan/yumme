@@ -18,7 +18,7 @@
 		<h1>YUMME</h1>
 		<p>A mobile app to gamify shopping for healthy foods and reward users with discounts and special offers.</p>
 
-		<div class="sidebar" id="bar">
+		<div class="sidebar" id="cart">
 			<h2>My Cart</h2>
 		</div>
 
@@ -67,14 +67,14 @@
 			id: 'strawberry',
 			image: 'style/img/strawberry.png'
 		});
-		document.getElementById('bar').innerHTML += strawberry.toHTML();
+		document.getElementById('cart').innerHTML += strawberry.toHTML();
 
 		var honey = new Ingredient({
 			name: 'Honey',
 			id: 'honey',
 			image: 'style/img/honey.png'
 		});
-		document.getElementById('bar').innerHTML += honey.toHTML();
+		document.getElementById('cart').innerHTML += honey.toHTML();
 
 		$('#' + strawberry.id).draggable();
 		$('#' + honey.id).draggable();
