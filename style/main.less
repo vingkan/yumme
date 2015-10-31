@@ -57,6 +57,7 @@ p{
 
 html{
 	background: url('img/wood.jpg');
+	overflow-x: hidden;
 }
 
 .CoverBackground(){
@@ -142,7 +143,7 @@ div.ingredient{
 	margin: 0.5 * @TextSize;
 
 	span.label{
-		background: @PrimaryDark;
+		background: @PrimaryColor;
 		color: white;
 		padding: 0.25 * @TextSize;
 		margin-top: 0.625 * @TextSize;
@@ -162,6 +163,7 @@ div.ingredient{
 /*--------------------------------------------*/
 
 div.sidebar{
+
 	position: fixed;
 	top: 0;	
 	width: 50vw;
@@ -171,6 +173,22 @@ div.sidebar{
 	border-right: 2vw solid @PrimaryDark;
 	.AnimateAll();
 	z-index: 50;
+
+	h2{
+		background: @PrimaryColor;
+		color: white;
+		padding: (0.25 * @TextSize) 0;
+	}
+
+	button.closeSideBar{
+		position: absolute;
+		top: 90vh - 5vw;
+		left: 10vw;
+		width: 30vw;
+		height: 10vh;
+		background: @PrimaryColor;
+	}
+
 }
 
 	div.sidebar-open{

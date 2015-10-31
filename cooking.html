@@ -17,6 +17,10 @@
 
 		<header>
 			<button onclick="toggleSideBar('cart');">O</button>
+			<div id="options">
+				<button class="menuOption" onclick="toggleSideBar('cart');">View Cart</button>
+				<button class="menuOption" onclick="toggleSideBar('recipe');">View Recipe</button>
+			</div>
 			<center>
 				<img class="logo" src="style/img/logo.png">
 			</center>
@@ -27,10 +31,14 @@
 
 		<div class="sidebar sidebar-close" id="recipe">
 			<h2>My Recipe</h2>
+			<div class="container" id="container-recipe"></div>
+			<button class="closeSideBar" onclick="closeAllSideBars();">Close</button>
 		</div>
 
 		<div class="sidebar sidebar-close" id="cart">
 			<h2>My Cart</h2>
+			<div class="container" id="container-cart"></div>
+			<button class="closeSideBar" onclick="closeAllSideBars();">Close</button>
 		</div>
 
 		<div id="locationSpace"></div>
@@ -93,7 +101,7 @@
 		acceptDrops('sink')
 		acceptDrops('table')
 
-		toggleSideBar('cart')
+		toggleSideBar('cart');
 
 		</script>
 		
