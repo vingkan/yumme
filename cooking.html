@@ -22,6 +22,8 @@
 		
 		<!-- IMPORTS -->
 		<script src="imports/jquery-1.11.3.min.js"></script>
+		<script src="imports/jquery-ui.js"></script>
+		<script src="imports/touchpunch.js"></script>
 		<script src="imports/howler.js"></script>
 		<!-- VIEW -->
 		<!-- APPLICATION -->
@@ -34,7 +36,36 @@
 
 		<script type="text/javascript">
 
+		var table = new PrepSpace({
+			name: 'Table',
+			id: 'table',
+			image: 'style/img/table.jpg'
+		});
+		document.getElementById('locationSpace').innerHTML += table.toHTML();
 
+		var sink = new PrepSpace({
+			name: 'Sink',
+			id: 'sink',
+			image: 'style/img/sink.png'
+		});
+		document.getElementById('locationSpace').innerHTML += sink.toHTML();
+
+
+		var strawberry = new Ingredient({
+			name: 'Strawberry',
+			id: 'strawberry',
+			image: 'style/img/strawberry.png'
+		});
+		document.getElementById('table').innerHTML += strawberry.toHTML();
+
+		$('#strawberry').draggable();
+		$('#strawberry').droppable({
+				drop: function(event, ui){
+					$(this)
+					.addClass("location")
+					.html("Dropped!");
+				}
+		});
 
 		</script>
 		

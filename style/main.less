@@ -81,11 +81,21 @@ button{
 /*---> EXPERIMENTAL <-------------------------*/
 /*--------------------------------------------*/
 
+.CoverBackground(){
+	//background-image property filled in by HTML
+	background-repeat: no-repeat;
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
 div.location{
 
 	width: 90vw;
 	height: 40vh;
-	margin: 0 auto;
+	margin: 5vw auto;
 
 	label{
 		background: @Charcoal;
@@ -98,12 +108,25 @@ div.location{
 		color: white;
 	}
 	
-	//background-image property filled in by HTML
-	background-repeat: no-repeat;
-	background-position: center center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+	.CoverBackground();
+
+}
+
+div.ingredient{
+
+	width: 2.0 * @TextSize;
+	height: 2.0 * @TextSize;
+	margin: 100px;
+
+	label{
+		position: absolute;
+		margin-top: 10px;
+		background: transparent;
+		border: none;
+		font-size: @TextSize;
+		text-align: center;
+	}
+
+	.CoverBackground();
 
 }
