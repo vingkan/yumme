@@ -3,7 +3,7 @@
 /*--------------------------------------------*/
 
 //Main Colors
-@PrimaryColor: orange;
+@PrimaryColor: #E11F26;
 @PrimaryLight: lighten(@PrimaryColor, 10%);
 @PrimaryDark: darken(@PrimaryColor, 10%);
 //Additional Colors
@@ -55,7 +55,7 @@ p{
 /*--------------------------------------------*/
 
 html{
-	background: @PrimaryColor;
+	background: url('img/wood.jpg');
 }
 
 .CoverBackground(){
@@ -107,7 +107,7 @@ button{
 div.location{
 
 	width: 90vw;
-	height: 48vh;
+	height: 48vw;
 	margin: 5vw auto;
 
 	label{
@@ -154,7 +154,7 @@ div.sidebar{
 	top: 0;	
 	width: 50vw;
 	height: 100vh;
-	background: @PrimaryLight;
+	background: @PrimaryColor;
 	border-right: 2vw solid @PrimaryDark;
 	.AnimateAll();
 	z-index: 50;
@@ -168,7 +168,22 @@ div.sidebar{
 		left: -52vw;
 	}
 
-button#openButton{
+header{
+
+	@headerHeight: 2.0 * @TextSize;
 	background: @PrimaryDark;
 
+	img.logo{
+		height: @headerHeight;
+	}
+
+	button{
+		background: @PrimaryColor;
+		width: 2.0 * @TextSize;
+		height: 2.0 * @TextSize;
+		line-height: 2.0 * @TextSize;
+		border-radius: 1.0 * @TextSize;
+	}
+
 }
+
