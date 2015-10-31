@@ -42,6 +42,7 @@
 			image: 'style/img/plate.png'
 		});
 		document.getElementById('locationSpace').innerHTML += plate.toHTML();
+		plate.acceptDrops();
 
 		var sink = new PrepSpace({
 			name: 'Sink',
@@ -49,7 +50,15 @@
 			image: 'style/img/sink.png'
 		});
 		document.getElementById('locationSpace').innerHTML += sink.toHTML();
+		sink.acceptDrops();
 
+		var table = new PrepSpace({
+			name: 'Table',
+			id: 'table',
+			image: 'style/img/table.jpg'
+		});
+		document.getElementById('locationSpace').innerHTML += table.toHTML();
+		table.acceptDrops();
 
 		var strawberry = new Ingredient({
 			name: 'Strawberry',
@@ -59,18 +68,6 @@
 		document.getElementById('plate').innerHTML += strawberry.toHTML();
 
 		$('#' + strawberry.id).draggable();
-		$('#' + sink.id).droppable({
-			accept: '.ingredient',
-			drop: function(event, ui){
-				console.log(ui.draggable.html())
-
-				$(this).append(ui.draggable.html());
-				
-				/*$(this)
-				.addClass("location")
-				.html("Dropped!");*/
-			}
-		});
 
 		</script>
 		

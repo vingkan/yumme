@@ -18,3 +18,21 @@ PrepSpace.prototype.toHTML = function(){
 	html += '</div>';
 	return html;
 }
+
+function acceptDrops(targetID){
+	$('#' + targetID).droppable({
+		accept: '.ingredient',
+		drop: function(event, ui){
+			var dropID = $(ui.draggable).attr('id');
+			$(ui.draggable).remove();
+			var toDrop = getIngredient(dropID);
+			$(this).append(toDrop.toHTML());
+			$('#' + dropID).draggable();
+		}
+	});
+	console.log('enabled drops on: ' + targetID);
+}
+
+PrepSpace.prototype.acceptDrops = function(){
+	acceptDrops(this.id)
+}
