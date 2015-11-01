@@ -25,7 +25,7 @@
 /*---> TEXT <---------------------------------*/
 /*--------------------------------------------*/
 
-h1, h2, h3, h4, h5, h6, p, span, ol{
+h1, h2, h3, h4, h5, h6, p, span, ol, ul{
 	font-family: @BodyFont;
 	font-size: @TextSize;
 	text-align: center;
@@ -63,11 +63,18 @@ p{
 
 	}
 
-ol{
+ol, ul{
 	width: 90%;
 	margin: 0 auto;
-	list-style-type: decimal;
 	list-style-position: inside;
+}
+
+ol{
+	list-style-type: decimal;
+}
+
+ul{
+	list-style-type: disc;
 }
 
 li{
@@ -393,6 +400,39 @@ div.utensil{
 	.faucet-off{
 		background-image: url('img/faucet-off.png');
 	}
+
+div.recipe-result{
+
+	margin: (0.5 * @TextSize) auto;
+	width: 80%;
+	padding: 5%;
+	height: 1.5 * @TextSize;
+	line-height: 1.5 * @TextSize;
+	background: @PrimaryColor;
+	color: white;
+	font-family: @BodyFont;
+	font-size: 0.75 * @TextSize;
+	text-align: left;
+
+	button{
+
+		background: white;
+		color: @PrimaryColor;
+		width: 1.5 * @TextSize;
+		height: 1.5 * @TextSize;
+		border-radius: 0.75 * @TextSize;
+		margin-right: 0.5 * @TextSize;
+
+		&:hover{
+			background: @Charcoal;
+			color: white;
+		}
+
+		.AnimateAll();
+
+	}
+
+}
 
 /*--------------------------------------------*/
 /*---> EXPERIMENTAL <-------------------------*/

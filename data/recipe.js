@@ -32,8 +32,16 @@ function Recipe(config){
 Recipe.prototype.toHTML = function(){
 	var html = "";
 	html += '<h3>' + this.name + '</h3>';
+	html += '<h4>ingredients</h4>';
+	html += '<ul>';
+	var size = this.ingredients.length;
+	for(var i = 0; i < size; i++){
+		html += '<li>' + this.ingredients[i].name + '</li>';
+	}
+	html += '</ul>';
+	html += '<h4>instructions</h4>';
 	html += '<ol>';
-	var size = this.instructions.length;
+	size = this.instructions.length;
 	for(var i = 0; i < size; i++){
 		html += '<li>' + this.instructions[i] + '</li>';
 	}
@@ -42,7 +50,10 @@ Recipe.prototype.toHTML = function(){
 }
 
 Recipe.prototype.toResultHTML = function(){
-	var html = '<div class="recipe-result onclick="selectRecipe(&quot;' + this.id + '&quot;);">' + this.name + '</div>';
+	var html = '<div class="recipe-result">';
+	html += '<button onclick="selectRecipe(&quot;' + this.id + '&quot;);">+</button>';
+	html += this.name;
+	html += '</div>';
 	return html;
 }
 
