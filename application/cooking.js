@@ -38,7 +38,7 @@ var faucet = new Utensil({
 	alignment: 'center',
 	image: 'style/img/faucet-off.png',
 	draggable: false,
-	state: 'on',
+	state: 'off',
 	action: 'rinse'
 });
 sink.addUtensil(faucet);

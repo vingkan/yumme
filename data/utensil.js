@@ -91,16 +91,14 @@ function utensilAction(action, utensil){
 
 function faucetRinse(utensil){
 
-	var faucet = document.getElementById('faucet');
-
 	function toggleFaucet(){
-		if($('#faucet').hasClass('faucet-on')){
-			$('#faucet').removeClass('faucet-on');
-			$('#faucet').addClass('faucet-off');
+		if($('#' + utensil.id).hasClass('faucet-on')){
+			$('#' + utensil.id).removeClass('faucet-on');
+			$('#' + utensil.id).addClass('faucet-off');
 		}
 		else{
-			$('#faucet').removeClass('faucet-off');
-			$('#faucet').addClass('faucet-on');
+			$('#' + utensil.id).removeClass('faucet-off');
+			$('#' + utensil.id).addClass('faucet-on');
 		}
 	}
 
