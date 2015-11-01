@@ -45,7 +45,7 @@ Ingredient.prototype.toResultHTML = function(){
 	//html += 'id="' + this.id + '" ';
 	html += 'style="background-image: url(' + this.image + ');"';
 	html += '>';
-	html += '<button class="buy" onclick="addToCart(' + this.id + ');">+</button>';
+	html += '<button class="buy" onclick="addToCart(&quot;' + this.id + '&quot;);">+</button>';
 	html += '<span class="label">' + this.name + '</span>';
 	html += '</div>';
 	return html;
@@ -56,6 +56,7 @@ function addToCart(ingredientID){
 	var targetIngredient = getIngredient(ingredientID);
 	cartContainer.innerHTML += targetIngredient.toHTML();
 	$('#' + targetIngredient.id).draggable();
+	toggleSideBar('cart');
 }
 /*--------------------------------------------*/
 /*---> SEARCHING <----------------------------*/
