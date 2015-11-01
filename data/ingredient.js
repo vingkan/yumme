@@ -12,7 +12,7 @@ function getIngredient(id){
 		return response;
 	}
 	else{
-		console.log('ERROR: An ingredient with the id: [' + id + '] was not found.');
+		alert('ERROR: An ingredient with the id: [' + id + '] was not found.');
 	}
 }
 
@@ -78,8 +78,8 @@ function searchIngredients(){
 	if(size > 0){
 		for(var r = 0; r < size; r++){
 			var ingredientResult = getIngredient(results[r].ref)
-			console.log(results[r]);
-			console.log(ingredientResult);
+			/*console.log(results[r]);
+			console.log(ingredientResult);*/
 			output.innerHTML += ingredientResult.toResultHTML();
 		}
 	}

@@ -45,4 +45,3 @@ $('#' + honey.id).draggable();*/
 
 acceptDrops('plate')
 acceptDrops('sink')
-acceptDrops('table')

@@ -16,13 +16,13 @@ function Utensil(config){
 
 Utensil.prototype.getScaledWidth = function(){
 	var scaled = (90.0 / 400.0) * (this.width);
-	console.log('getScaledWidth = ' + scaled);
+	//console.log('getScaledWidth = ' + scaled);
 	return scaled;
 }
 
 Utensil.prototype.getScaledHeight = function(){
 	var scaled = (90.0 / 400.0) * (this.height);
-	console.log('getScaledHeight = ' + scaled);
+	//console.log('getScaledHeight = ' + scaled);
 	return scaled;
 }
 
@@ -59,7 +59,7 @@ Utensil.prototype.toHTML = function(){
 	html += 'onclick=utensilAction(&quot;' + this.action + '&quot;);>';
 	html += '<span class="label">' + this.name + '</span>';
 	html += '</div>';
-	console.log(html)
+	//console.log(html)
 	return html;
 }
 
