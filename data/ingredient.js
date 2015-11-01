@@ -24,6 +24,7 @@ function Ingredient(config){
 	this.name = config['name'];
 	this.id = config['id'];
 	this.image = config['image'];
+	this.squirt = config['squirt'];
 	this.addToBank();
 }
 
@@ -48,6 +49,10 @@ Ingredient.prototype.toResultHTML = function(){
 	html += '<span class="label">' + this.name + '</span>';
 	html += '</div>';
 	return html;
+}
+
+Ingredient.prototype.toSquirt = function(){
+	return '<div class="squirt" style="background: ' + this.squirt + ';"></div>';
 }
 
 function addToCart(ingredientID){

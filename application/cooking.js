@@ -25,10 +25,18 @@ var strawberry = new Ingredient({
 	image: 'style/img/strawberry.png'
 });
 
+var yogurt = new Ingredient({
+	name: 'Yogurt',
+	id: 'yogurt',
+	image: 'style/img/yogurt.png',
+	squirt: '#ececec'
+});
+
 var honey = new Ingredient({
 	name: 'Honey',
 	id: 'honey',
-	image: 'style/img/honey.png'
+	image: 'style/img/honey.png',
+	squirt: '#d48a00'
 });
 
 var faucet = new Utensil({
@@ -64,6 +72,7 @@ var recipe = new Recipe({
 	id: "berryparfait",
 	ingredients: [
 		strawberry,
+		yogurt,
 		honey
 	],
 	instructions: [
