@@ -87,6 +87,9 @@ function utensilAction(action, utensil){
 		case 'shake':
 			shakeBowl(utensil);
 			break;
+		case 'fill':
+			fillBowl(utensil);
+			break;
 		default:
 			alert('ERROR: Utensil Action Not Found.');
 	}
@@ -132,4 +135,8 @@ function shakeBowl(utensil){
 	}, 2000);
 	//console.log(utensil.id);
 	registerDroppable(utensil.id);
+}
+
+function shakeBowl(utensil){
+	
 }

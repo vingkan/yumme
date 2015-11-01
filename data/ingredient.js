@@ -52,6 +52,12 @@ Ingredient.prototype.toResultHTML = function(){
 }
 
 Ingredient.prototype.toSquirt = function(){
+	var squirt = new Howl({
+		urls: ['style/sound/squirt.mp3']
+	}).play();
+	setTimeout(function(){
+		squirt.stop();
+	}, 2000);
 	return '<div class="squirt" style="background: ' + this.squirt + ';"></div>';
 }
 
