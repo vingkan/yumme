@@ -24,6 +24,12 @@ var honey = new Ingredient({
 	image: 'style/img/honey.png'
 });
 
+var honey = new Ingredient({
+	name: 'Honey',
+	id: 'honey1',
+	image: 'style/img/honey.png'
+});
+
 var faucet = new Utensil({
 	name: 'Faucet',
 	id: 'faucet',
