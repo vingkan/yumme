@@ -41,6 +41,18 @@ Recipe.prototype.toHTML = function(){
 	return html;
 }
 
+Recipe.prototype.toResultHTML = function(){
+	var html = '<div class="recipe-result onclick="selectRecipe(&quot;' + this.id + '&quot;);">' + this.name + '</div>';
+	return html;
+}
+
+function selectRecipe(recipeID){
+	var recipeContainer = document.getElementById('container-recipe');
+	var selectedRecipe = getRecipe(recipeID);
+	recipeContainer.innerHTML = selectedRecipe.toHTML();
+	toggleSideBar('recipe');
+}
+
 Recipe.prototype.getInstructionsAsBlob = function(){
 	var blob = "";
 	var size = this.instructions.length;
@@ -70,7 +82,7 @@ function searchRecipes(){
 	if(size > 0){
 		for(var r = 0; r < size; r++){
 			var recipeResult = getRecipe(results[r].ref);
-			output.innerHTML += recipeResult.toHTML();
+			output.innerHTML += recipeResult.toResultHTML();
 		}
 	}
 	else{
