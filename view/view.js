@@ -41,4 +41,38 @@ function toggleMenu(menuID, forceClose){
 			menu.addClass('options-open');
 		}
 	}
+	enableDrags();
+}
+
+var draggables = [];
+
+function registerDraggable(ingredientID){
+	draggables.push(ingredientID);
+}
+
+function enableDrags(){
+	var size = draggables.length;
+	var ingredientID = "INITIAL";
+	for(var d = 0; d < size; d++){
+		ingredientID = draggables[d];
+		$('#' + ingredientID).draggable();
+		console.log('draggable: ' + '#' + ingredientID);
+		console.log($('#' + ingredientID));
+	}
+	console.log("Enable All Drags!");
+}
+
+function acceptDrops(targetID){
+	$('#' + targetID).droppable({
+		accept: '.ingredient',
+		drop: function(event, ui){
+			var dropID = $(ui.draggable).attr('id');
+			$(ui.draggable).remove();
+			var toDrop = getIngredient(dropID);
+			$(this).append(toDrop.toHTML());
+			$('#' + dropID).draggable();
+			closeAllSideBars();
+		}
+	});
+	console.log('enabled drops on: ' + targetID);
 }

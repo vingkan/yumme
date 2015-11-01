@@ -31,18 +31,3 @@ PrepSpace.prototype.addUtensil = function(utensil){
 		$('#' + utensil.id).draggable();
 	}
 }
-
-function acceptDrops(targetID){
-	$('#' + targetID).droppable({
-		accept: '.ingredient',
-		drop: function(event, ui){
-			var dropID = $(ui.draggable).attr('id');
-			$(ui.draggable).remove();
-			var toDrop = getIngredient(dropID);
-			$(this).append(toDrop.toHTML());
-			$('#' + dropID).draggable();
-			closeAllSideBars();
-		}
-	});
-	console.log('enabled drops on: ' + targetID);
-}

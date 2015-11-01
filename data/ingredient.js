@@ -55,7 +55,7 @@ function addToCart(ingredientID){
 	var cartContainer = document.getElementById('container-cart');
 	var targetIngredient = getIngredient(ingredientID);
 	cartContainer.innerHTML += targetIngredient.toHTML();
-	$('#' + targetIngredient.id).draggable();
+	registerDraggable(ingredientID);
 	toggleSideBar('cart');
 }
 /*--------------------------------------------*/
