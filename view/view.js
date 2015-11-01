@@ -103,26 +103,33 @@ function enableDrops(){
 
 function acceptDrops(targetID){
 	$('#' + targetID).droppable({
-		accept: '.ingredient',
+		accept: '.ingredient, .utensil',
 		drop: function(event, ui){
-			var dropID = $(ui.draggable).attr('id');
-			$(ui.draggable).remove();
-			var toDrop = getIngredient(dropID);
-			var isUtensil = $('#' + targetID).hasClass('utensil');
-			if(isUtensil){
-				//$('#' + targetID).click();
-				console.log('hello')
+			//console.log($(ui.draggable).hasClass('utensil'))
+			if($(ui.draggable).hasClass('ingredient')){
+				var dropID = $(ui.draggable).attr('id');
+				$(ui.draggable).remove();
+				var toDrop = getIngredient(dropID);
+				var isUtensil = $('#' + targetID).hasClass('utensil');
+				if(toDrop.squirt && isUtensil){
+					$(this).append(toDrop.toSquirt());
+				}
+				else{
+					$(this).append(toDrop.toHTML());
+				}
+				$('#' + dropID).draggable();
+			}
+			else if($(ui.draggable).hasClass('utensil')){
 				utensilAction('fill', $('#' + targetID), ui.draggable.html());
+				/*var label = excludeTag(ui.draggable.html(), '/span', false);
+				var fillings = excludeTag(ui.draggable.html(), '/span', true)
+				if(fillings.length > 5){
+					ui.draggable.empty();
+					ui.draggable.append(label);
+				}*/
 			}
-			if(toDrop.squirt && isUtensil){
-				$(this).append(toDrop.toSquirt());
-			}
-			else{
-				$(this).append(toDrop.toHTML());
-			}
-			$('#' + dropID).draggable();
 			closeAllSideBars();
 		}
 	});
-	console.log('enabled drops on: ' + targetID);
+	//console.log('enabled drops on: ' + targetID);
 }

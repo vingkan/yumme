@@ -137,6 +137,41 @@ function shakeBowl(utensil){
 	registerDroppable(utensil.id);
 }
 
+function excludeTag(htmlBlob, exclusion, exclude){
+	var size = htmlBlob.length;
+	var startRecording = false;
+	var countdown = exclusion.length;
+	var excluded = ""
+	var output = "";
+	for(var c = 0; c < size; c++){
+		if(!startRecording){
+			excluded += htmlBlob.charAt(c);
+			var tag = "";
+				tag = htmlBlob.charAt(c);
+			var tagLength = exclusion.length;
+			for(var i = 1; i < tagLength; i++) {
+				tag += htmlBlob.charAt(c+i);
+			}
+			console.log(tag);
+			if(tag === exclusion){
+				startRecording = true;
+			}
+		}
+		else{
+			if(countdown <= 0){
+				output += htmlBlob.charAt(c);
+			}
+			else{
+				excluded += htmlBlob.charAt(c);
+				countdown--;
+			}
+		}
+	}
+	var response = exclude ? output : excluded;
+	//alert(response)
+	return response;
+}
+
 function fillBowl(utensil, extraArgs){
 	var squirt = new Howl({
 		urls: ['style/sound/squirt.mp3']
@@ -144,5 +179,8 @@ function fillBowl(utensil, extraArgs){
 	setTimeout(function(){
 		squirt.stop();
 	}, 2000);
+	console.log(utensil)
 	console.log(extraArgs)
+	var fillings = excludeTag(extraArgs, '/span', true);
+	utensil.append(fillings);
 }
