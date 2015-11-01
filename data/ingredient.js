@@ -51,11 +51,14 @@ Ingredient.prototype.toResultHTML = function(){
 }
 
 function addToCart(ingredientID){
-	var cartContainer = document.getElementById('container-cart');
 	var targetIngredient = getIngredient(ingredientID);
-	cartContainer.innerHTML += targetIngredient.toHTML();
+	//var cartContainer = document.getElementById('container-cart');
+	//cartContainer.innerHTML += targetIngredient.toHTML();
+	//toggleSideBar('cart');
+	var ingredientsTable = document.getElementById('ingredientsTable');
+	ingredientsTable.innerHTML += targetIngredient.toHTML();
 	registerDraggable(ingredientID);
-	toggleSideBar('cart');
+	closeAllSideBars();
 }
 
 /*--------------------------------------------*/
