@@ -282,6 +282,7 @@ div.ingredient{
 	width: 2.0 * @TextSize;
 	height: 2.0 * @TextSize;
 	margin: 0.5 * @TextSize;
+	z-index: 10;
 
 	span.label{
 		.DisplayLabel(@PrimaryColor);
@@ -293,7 +294,9 @@ div.ingredient{
 
 div.utensil{
 
+	position: absolute;
 	.CoverBackground();
+	z-index: 20;
 
 	span.label{
 		.DisplayLabel(@SinkBlue);
@@ -301,11 +304,7 @@ div.utensil{
 
 }
 
-	//DEFAULT UTENSIL POSITIONS
-
-	div#faucet{
-		margin: 0 auto;
-	}
+	//UTENSIL STATES
 
 	.faucet-on{
 		background-image: url('img/faucet-on.png');

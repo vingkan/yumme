@@ -19,6 +19,11 @@ PrepSpace.prototype.toHTML = function(){
 	return html;
 }
 
+PrepSpace.prototype.addToLocations = function(){
+	document.getElementById('locationSpace').innerHTML += this.toHTML();
+	acceptDrops(this.id);
+}
+
 PrepSpace.prototype.addUtensil = function(utensil){
 	var prepSpace = document.getElementById(this.id);
 	prepSpace.innerHTML += utensil.toHTML();

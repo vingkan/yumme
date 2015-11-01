@@ -3,21 +3,14 @@ var plate = new PrepSpace({
 	id: 'plate',
 	image: 'style/img/plate.png'
 });
-document.getElementById('locationSpace').innerHTML += plate.toHTML();
+plate.addToLocations();
 
 var sink = new PrepSpace({
 	name: 'Sink',
 	id: 'sink',
 	image: 'style/img/sink.png'
 });
-document.getElementById('locationSpace').innerHTML += sink.toHTML();
-
-var table = new PrepSpace({
-	name: 'Table',
-	id: 'table',
-	image: 'style/img/table.jpg'
-});
-document.getElementById('locationSpace').innerHTML += table.toHTML();
+sink.addToLocations();
 
 var strawberry = new Ingredient({
 	name: 'Strawberry',
@@ -38,6 +31,7 @@ var faucet = new Utensil({
 	id: 'faucet',
 	width: 107.686,
 	height: 213.472,
+	alignment: 'center',
 	image: 'style/img/faucet-off.png',
 	draggable: false,
 	state: 'on',
