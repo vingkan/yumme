@@ -58,6 +58,7 @@ function addToCart(ingredientID){
 	registerDraggable(ingredientID);
 	toggleSideBar('cart');
 }
+
 /*--------------------------------------------*/
 /*---> SEARCHING <----------------------------*/
 /*--------------------------------------------*/
@@ -77,7 +78,7 @@ function searchIngredients(){
 		output.innerHTML = "";
 	if(size > 0){
 		for(var r = 0; r < size; r++){
-			var ingredientResult = getIngredient(results[r].ref)
+			var ingredientResult = getIngredient(results[r].ref);
 			/*console.log(results[r]);
 			console.log(ingredientResult);*/
 			output.innerHTML += ingredientResult.toResultHTML();
