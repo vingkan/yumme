@@ -113,6 +113,26 @@ html{
 	background-size: cover;
 }
 
+div.shade{
+	background: black;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	.AnimateAll();
+}
+
+div.shade-on{
+	z-index: 70;
+	background: @Charcoal;
+}
+
+div.shade-off{
+	z-index: -5;
+	background: transparent;
+}
+
 /*--------------------------------------------*/
 /*---> HEADER <-------------------------------*/
 /*--------------------------------------------*/
@@ -138,6 +158,7 @@ header{
 		border-radius: 1.0 * @TextSize;
 		position: fixed;
 		.AnimateAll();
+		z-index: 80;
 	}
 
 }
@@ -149,7 +170,7 @@ div#options{
 	width: 80vw;
 	height: auto;
 	left: 8vw;
-	z-index: 60;
+	z-index: 80;
 
 	button.menuOption{
 
@@ -187,7 +208,7 @@ button.button-right{
 }
 
 div.options-open{
-	top: 20vh;
+	top: 15vh;
 }
 
 div.options-close{
@@ -208,7 +229,7 @@ div.sidebar{
 	color: @PrimaryDark;
 	border-right: 2vw solid @PrimaryDark;
 	.AnimateAll();
-	z-index: 50;
+	z-index: 75;
 	overflow-y: scroll;
 	overflow-x: visible;
 

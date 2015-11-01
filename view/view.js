@@ -32,20 +32,35 @@ function toggleSideBar(sideBarID, forceClose){
 	}
 }
 
+function toggleShade(open){
+	var shade = $('#shade');
+	if(open){
+		shade.removeClass('shade-off');
+		shade.addClass('shade-on');
+	}
+	else{
+		shade.removeClass('shade-on');
+		shade.addClass('shade-off');
+	}
+}
+
 function toggleMenu(menuID, forceClose){
 	var menu = $('#' + menuID);
 	if(forceClose){
 		menu.removeClass('options-open');
 		menu.addClass('options-close');
+		toggleShade(false);
 	}
 	else{
 		if(menu.hasClass('options-open')){
 			menu.removeClass('options-open');
 			menu.addClass('options-close');
+			toggleShade(false);
 		}
 		else{
 			menu.removeClass('options-close');
 			menu.addClass('options-open');
+			toggleShade(true);
 		}
 	}
 	enableDrags();
