@@ -68,6 +68,8 @@ var recipe = new Recipe({
 		"Put the yogurt into a bowl.",
 		"Top the yogurt with a handful of strawberries.",
 		"Drizzle the honey over your strawberries.",
+		"Serve and enjoy!",
+		"Serve and enjoy!",
 		"Serve and enjoy!"
 	]
 });

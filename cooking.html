@@ -16,19 +16,21 @@
 	<body>
 
 		<header>
-			<button id="openMenu" class="button-left" onclick="toggleMenu('options');">O</button>
+			<button id="openMenu" class="button-left" onclick="closeAllSideBars(); toggleMenu('options');"></button>
 			<div id="options" class="options-close">
 				<button class="menuOption" onclick="toggleSideBar('cookbook');">Cookbook</button>
 				<button class="menuOption" onclick="toggleSideBar('shop');">Shop</button>
 				<button class="menuOption" onclick="toggleSideBar('cart');">View Cart</button>
 				<button class="menuOption" onclick="toggleSideBar('recipe');">View Recipe</button>
+				<button class="menuOption" onclick="toggleMenu('options', true);">Exit Menu</button>
 			</div>
 			<center>
 				<img class="logo" src="style/img/logo.png">
 			</center>
 		</header>
 
-		
+		<div class="shade"></div>
+
 		<p>A mobile app to gamify shopping for healthy foods and reward users with discounts and special offers.</p>
 
 		<div class="sidebar sidebar-close" id="cookbook">

@@ -174,10 +174,16 @@ div#options{
 
 button.button-left{
 	left: 2vw;
+	&:before{
+		content: "O";
+	}
 }
 
 button.button-right{
 	left: 74vw;
+	&:before{
+		content: "X";
+	}
 }
 
 div.options-open{
@@ -203,6 +209,8 @@ div.sidebar{
 	border-right: 2vw solid @PrimaryDark;
 	.AnimateAll();
 	z-index: 50;
+	overflow-y: scroll;
+	overflow-x: visible;
 
 	h2{
 		background: @PrimaryColor;
@@ -210,23 +218,19 @@ div.sidebar{
 		padding: (0.25 * @TextSize) 0;
 	}
 
-	/*div.container{
-		background: transparent;
-		width: 100%;
-		height: 75vh;
-		overflow-y: scroll;
-		overflow-x: visible !important;
-	}*/
-
-	button.closeSideBar{
+	/*button.closeSideBar{
 		position: absolute;
-		top: 90vh;
+		bottom: 10vh;
 		left: 20vw;
 		width: 30vw;
 		height: 7.5vh;
 		line-height: 7.5vh;
 		font-size: 0.5 * @TextSize;
 		background: @PrimaryColor;
+	}*/
+
+	button.closeSideBar{
+		display: none;
 	}
 
 }
