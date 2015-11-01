@@ -26,6 +26,7 @@ function Recipe(config){
 	this.id = config['id'];
 	this.ingredients = config['ingredients']
 	this.instructions = config['instructions'];
+	this.addToBank();
 }
 
 Recipe.prototype.toHTML = function(){
@@ -62,7 +63,7 @@ var recipesBank = lunr(function(){
 
 function searchRecipes(){
 	var query = document.getElementById('search-recipes').value;
-	var results = recipeBank.search(query);
+	var results = recipesBank.search(query);
 	var size = results.length;
 	var output = document.getElementById('cookbookResults');
 		output.innerHTML = "";
@@ -78,6 +79,7 @@ function searchRecipes(){
 }
 
 Recipe.prototype.addToBank = function(){
+	recipes.push(this);
 	recipesBank.add({
 		id: this.id,
 		title: this.name,

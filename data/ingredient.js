@@ -24,7 +24,6 @@ function Ingredient(config){
 	this.name = config['name'];
 	this.id = config['id'];
 	this.image = config['image'];
-	ingredients.push(this);
 	this.addToBank();
 }
 
@@ -90,6 +89,7 @@ function searchIngredients(){
 }
 
 Ingredient.prototype.addToBank = function(){
+	ingredients.push(this);
 	ingredientsBank.add({
 		id: this.id,
 		title: this.name,
