@@ -18,6 +18,7 @@
 		<header>
 			<button id="openMenu" class="button-left" onclick="toggleMenu('options');">O</button>
 			<div id="options" class="options-close">
+				<button class="menuOption" onclick="toggleSideBar('shop');">Cookbook</button>
 				<button class="menuOption" onclick="toggleSideBar('shop');">Shop</button>
 				<button class="menuOption" onclick="toggleSideBar('cart');">View Cart</button>
 				<button class="menuOption" onclick="toggleSideBar('recipe');">View Recipe</button>
@@ -29,6 +30,16 @@
 
 		
 		<p>A mobile app to gamify shopping for healthy foods and reward users with discounts and special offers.</p>
+
+		<div class="sidebar sidebar-close" id="cookbook">
+			<h2>Cookbook</h2>
+			<div class="container" id="container-cookbook">
+				<p>Type in this box to search for recipes.</p>
+				<input type="text" id="search-recipes" onchange="searchRecipes();">
+				<div id="cookbookResults"></div>
+			</div>
+			<button class="closeSideBar" onclick="closeAllSideBars();">Close</button>
+		</div>
 
 		<div class="sidebar sidebar-close" id="shop">
 			<h2>Shopping</h2>
@@ -75,6 +86,7 @@
 		<script src="data/prepSpace.js"></script>
 		<script src="data/utensil.js"></script>
 		<script src="data/ingredient.js"></script>
+		<script src="data/recipe.js"></script>
 		<!-- DATABASE -->
 		<!-- APPLICATION -->
 		<script src="application/cooking.js"></script>
