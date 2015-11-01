@@ -38,7 +38,8 @@ var faucet = new Utensil({
 	id: 'faucet',
 	width: 107.686,
 	height: 213.472,
-	image: 'style/img/faucet-off.png'
+	image: 'style/img/faucet-off.png',
+	action: 'rinse'
 });
 document.getElementById('sink').innerHTML += faucet.toHTML();
 

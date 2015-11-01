@@ -8,6 +8,7 @@ function Utensil(config){
 	this.height = parseFloat(config['height']);
 	this.id = config['id'];
 	this.image = config['image'];
+	this.action = config['action'];
 }
 
 Utensil.prototype.getScaledWidth = function(){
@@ -29,9 +30,28 @@ Utensil.prototype.toHTML = function(){
 	html += 'style="width: ' + this.getScaledWidth() + 'vw;';
 	html += 'height: ' + this.getScaledHeight() + 'vw;';
 	html += 'background-image: url(' + this.image + ');"';
-	html += '>';
+	html += 'onclick=utensilAction(&quot;' + this.action + '&quot;);>';
 	html += '<span class="label">' + this.name + '</span>';
 	html += '</div>';
 	console.log(html)
 	return html;
+}
+
+/*--------------------------------------------*/
+/*---> ACTIONS <------------------------------*/
+/*--------------------------------------------*/
+
+function utensilAction(action){
+	switch(action){
+		case 'rinse':
+			faucetRinse();
+			break;
+		default:
+			alert('ERROR: Utensil Action Not Found.');
+	}
+}
+
+function faucetRinse(){
+	var faucet = document.getElementById('faucet');
+	faucet.style.backgroundImage = "url('style/img/faucet-on.png')";
 }
