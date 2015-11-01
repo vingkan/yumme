@@ -93,7 +93,7 @@ function faucetRinse(){
 	}
 
 	var runningWater = new Howl({
-		urls: ['style/sound/running water.wav']
+		urls: ['style/sound/runningwater.wav']
 	}).play();
 
 	var rinse = 0;

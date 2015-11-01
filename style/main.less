@@ -58,13 +58,14 @@ p{
 ol{
 	width: 90%;
 	margin: 0 auto;
-	list-style-type: square;
+	list-style-type: decimal;
 	list-style-position: inside;
 }
 
 li{
 	text-align: left;
 	color: @Charcoal;
+	margin: (0.5 * @TextSize) auto;
 }
 
 li.highlighted{
@@ -176,6 +177,13 @@ div.sidebar{
 		background: @PrimaryColor;
 		color: white;
 		padding: (0.25 * @TextSize) 0;
+	}
+
+	div.container{
+		background: transparent;
+		width: 100%;
+		height: 75vh;
+		overflow-y: scroll;
 	}
 
 	button.closeSideBar{
