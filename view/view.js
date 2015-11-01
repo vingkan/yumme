@@ -9,18 +9,25 @@ function closeAllSideBars(){
 function toggleSideBar(sideBarID, forceClose){
 	toggleMenu('options', true);
 	var sideBar = $('#' + sideBarID);
+	var menu = $('#openMenu');
 	if(forceClose){
 		sideBar.removeClass('sidebar-open');
 		sideBar.addClass('sidebar-close');
+		menu.removeClass('button-right');
+		menu.addClass('button-left');
 	}
 	else{
 		if(sideBar.hasClass('sidebar-open')){
 			sideBar.removeClass('sidebar-open');
 			sideBar.addClass('sidebar-close');
+			menu.removeClass('button-right');
+			menu.addClass('button-left');
 		}
 		else{
 			sideBar.removeClass('sidebar-close');
 			sideBar.addClass('sidebar-open');
+			menu.removeClass('button-left');
+			menu.addClass('button-right');
 		}
 	}
 }
