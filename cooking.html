@@ -55,60 +55,21 @@
 		<script src="imports/jquery-ui.js"></script>
 		<script src="imports/touchpunch.js"></script>
 		<script src="imports/howler.js"></script>
-		<!-- VIEW -->
-		<script src="view/view.js"></script>
-		<!-- APPLICATION -->
-		<script src="application/nutrients.js"></script>
 		<!-- DATA -->
 		<script src="data/prepSpace.js"></script>
 		<script src="data/utensil.js"></script>
 		<script src="data/ingredient.js"></script>
 		<!-- DATABASE -->
+		<!-- APPLICATION -->
+		<script src="application/cooking.js"></script>
+		<!-- VIEW -->
+		<script src="view/view.js"></script>
 
 		<script type="text/javascript">
 
-		var plate = new PrepSpace({
-			name: 'My Plate',
-			id: 'plate',
-			image: 'style/img/plate.png'
-		});
-		document.getElementById('locationSpace').innerHTML += plate.toHTML();
+		
 
-		var sink = new PrepSpace({
-			name: 'Sink',
-			id: 'sink',
-			image: 'style/img/sink.png'
-		});
-		document.getElementById('locationSpace').innerHTML += sink.toHTML();
-
-		var table = new PrepSpace({
-			name: 'Table',
-			id: 'table',
-			image: 'style/img/table.jpg'
-		});
-		document.getElementById('locationSpace').innerHTML += table.toHTML();
-
-		var strawberry = new Ingredient({
-			name: 'Strawberry',
-			id: 'strawberry',
-			image: 'style/img/strawberry.png'
-		});
-		document.getElementById('container-cart').innerHTML += strawberry.toHTML();
-
-		var honey = new Ingredient({
-			name: 'Honey',
-			id: 'honey',
-			image: 'style/img/honey.png'
-		});
-		document.getElementById('container-cart').innerHTML += honey.toHTML();
-
-		$('#' + strawberry.id).draggable();
-		$('#' + honey.id).draggable();
-		acceptDrops('plate')
-		acceptDrops('sink')
-		acceptDrops('table')
-
-		toggleSideBar('recipe');
+		//toggleSideBar('recipe');
 
 		</script>
 		

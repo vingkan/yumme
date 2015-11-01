@@ -9,6 +9,7 @@
 //Additional Colors
 @Charcoal: #1a1a1a;
 @BananaYellow: #FFD01F;
+@SinkBlue: #387ED8;
 
 /*--------------------------------------------*/
 /*---> FONTS <--------------------------------*/
@@ -91,135 +92,8 @@ html{
 }
 
 /*--------------------------------------------*/
-/*---> FORMS <--------------------------------*/
+/*---> HEADER <-------------------------------*/
 /*--------------------------------------------*/
-
-input, select, button{
-	outline: none;
-	border: none;
-	box-sizing: border-box;
-	//TEXT STYLES
-	color: white;
-	font-family: @BodyFont;
-	font-size: @TextSize;
-	line-height: 1.5 * @TextSize;
-}
-
-input{
-
-}
-
-button{
-
-}
-
-/*--------------------------------------------*/
-/*---> ANIMATIONS <---------------------------*/
-/*--------------------------------------------*/
-
-.AnimateAll(@time: 0.5s){
-	transition: all @time ease;
-	-webkit-transition: all @time ease;
-}
-
-/*--------------------------------------------*/
-/*---> COOKING <------------------------------*/
-/*--------------------------------------------*/
-
-div.location{
-
-	width: 90vw;
-	height: 48vw;
-	margin: 5vw auto;
-	border-top: (0.15 * @TextSize) solid @PrimaryDark;
-
-	span.label{
-		background: @PrimaryDark;
-		padding: 0 0.5 * @TextSize;
-		border-bottom: (0.15 * @TextSize) solid white;
-		margin: 0 (0.5 * @TextSize);
-		//Text Style
-		font-family: @DisplayFont;
-		font-size: 0.5 * @TextSize;
-		color: white;
-	}
-
-	div.ingredient{
-
-		span.label{
-			background: @Charcoal;
-		}
-
-	}
-	
-	.CoverBackground();
-
-}
-
-div.ingredient{
-
-	width: 2.0 * @TextSize;
-	height: 2.0 * @TextSize;
-	margin: 0.5 * @TextSize;
-
-	span.label{
-		background: @PrimaryColor;
-		color: white;
-		padding: 0.25 * @TextSize;
-		margin-top: 0.625 * @TextSize;
-		margin-left: 2.25 * @TextSize;
-		position: absolute;
-		border: none;
-		font-size: 0.5 * @TextSize;
-		text-align: center;
-	}
-
-	.CoverBackground();
-
-}
-
-/*--------------------------------------------*/
-/*---> EXPERIMENTAL <-------------------------*/
-/*--------------------------------------------*/
-
-div.sidebar{
-
-	position: fixed;
-	top: 0;	
-	width: 70vw;
-	height: 100vh;
-	background: white;
-	color: @PrimaryDark;
-	border-right: 2vw solid @PrimaryDark;
-	.AnimateAll();
-	z-index: 50;
-
-	h2{
-		background: @PrimaryColor;
-		color: white;
-		padding: (0.25 * @TextSize) 0;
-	}
-
-	button.closeSideBar{
-		position: absolute;
-		top: 90vh;
-		left: 20vw;
-		width: 30vw;
-		height: 7.5vh;
-		line-height: 7.5vh;
-		font-size: 0.5 * @TextSize;
-		background: @PrimaryColor;
-	}
-
-}
-
-	div.sidebar-open{
-		left: 0;
-	}
-
-	div.sidebar-close{
-		left: -72vw;
-	}
 
 @headerHeight: 2.0 * @TextSize;
 
@@ -280,4 +154,153 @@ div.options-open{
 
 div.options-close{
 	top: -50vh;
+}
+
+/*--------------------------------------------*/
+/*---> SIDEBARS <-----------------------------*/
+/*--------------------------------------------*/
+
+div.sidebar{
+
+	position: fixed;
+	top: 0;	
+	width: 70vw;
+	height: 100vh;
+	background: white;
+	color: @PrimaryDark;
+	border-right: 2vw solid @PrimaryDark;
+	.AnimateAll();
+	z-index: 50;
+
+	h2{
+		background: @PrimaryColor;
+		color: white;
+		padding: (0.25 * @TextSize) 0;
+	}
+
+	button.closeSideBar{
+		position: absolute;
+		top: 90vh;
+		left: 20vw;
+		width: 30vw;
+		height: 7.5vh;
+		line-height: 7.5vh;
+		font-size: 0.5 * @TextSize;
+		background: @PrimaryColor;
+	}
+
+}
+
+	div.sidebar-open{
+		left: 0;
+	}
+
+	div.sidebar-close{
+		left: -72vw;
+	}
+
+/*--------------------------------------------*/
+/*---> FORMS <--------------------------------*/
+/*--------------------------------------------*/
+
+input, select, button{
+	outline: none;
+	border: none;
+	box-sizing: border-box;
+	//TEXT STYLES
+	color: white;
+	font-family: @BodyFont;
+	font-size: @TextSize;
+	line-height: 1.5 * @TextSize;
+}
+
+input{
+
+}
+
+button{
+
+}
+
+/*--------------------------------------------*/
+/*---> ANIMATIONS <---------------------------*/
+/*--------------------------------------------*/
+
+.AnimateAll(@time: 0.5s){
+	transition: all @time ease;
+	-webkit-transition: all @time ease;
+}
+
+/*--------------------------------------------*/
+/*---> COOKING <------------------------------*/
+/*--------------------------------------------*/
+
+div.location{
+
+	width: 90vw;
+	height: (250/400) * 90vw;
+	margin: 5vw auto;
+	border-top: (0.15 * @TextSize) solid @PrimaryDark;
+
+	span.label{
+		background: @PrimaryDark;
+		padding: 0 0.5 * @TextSize;
+		border-bottom: (0.15 * @TextSize) solid white;
+		margin: 0 (0.5 * @TextSize);
+		//Text Style
+		font-family: @DisplayFont;
+		font-size: 0.5 * @TextSize;
+		color: white;
+	}
+
+	div.ingredient{
+
+		span.label{
+			background: @Charcoal;
+		}
+
+	}
+	
+	.CoverBackground();
+
+}
+
+.DisplayLabel(@labelBackgroundColor: @Charcoal;){
+	background: @labelBackgroundColor;
+	color: white;
+	padding: 0.25 * @TextSize;
+	margin-top: 0.625 * @TextSize;
+	margin-left: 2.25 * @TextSize;
+	position: absolute;
+	border: none;
+	font-size: 0.5 * @TextSize;
+	text-align: center;
+}
+
+div.ingredient{
+
+	width: 2.0 * @TextSize;
+	height: 2.0 * @TextSize;
+	margin: 0.5 * @TextSize;
+
+	span.label{
+		.DisplayLabel(@PrimaryColor);
+	}
+
+	.CoverBackground();
+
+}
+
+/*--------------------------------------------*/
+/*---> EXPERIMENTAL <-------------------------*/
+/*--------------------------------------------*/
+
+div.utensil{
+
+	.CoverBackground();
+
+	span.label{
+		.DisplayLabel(@SinkBlue);
+	}
+
 }
