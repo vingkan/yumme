@@ -303,6 +303,24 @@ div.ingredient{
 	margin: 0.5 * @TextSize;
 	z-index: 10;
 
+	button.buy{
+		
+		position: absolute;
+		width: 2.5 * @TextSize;
+		height: 2.5 * @TextSize;
+		border-radius: 1.75 * @TextSize;
+		background: transparent;
+		border: 2vh solid @PrimaryColor;
+		margin-top: -0.25 * @TextSize;
+
+		&:hover{
+			background: @PrimaryColor;
+		}
+
+		.AnimateAll();
+
+	}
+
 	span.label{
 		.DisplayLabel(@PrimaryColor);
 	}
