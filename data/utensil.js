@@ -64,7 +64,7 @@ Utensil.prototype.toHTML = function(){
 	else{
 		html += '"';
 	}
-	html += 'onclick=utensilAction(&quot;' + this.action + '&quot;);>';
+	html += 'onclick="utensilAction(&quot;' + this.action + '&quot;, this);">';
 	html += '<span class="label">' + this.name + '</span>';
 	html += '</div>';
 	//console.log(html)
@@ -75,20 +75,21 @@ Utensil.prototype.toHTML = function(){
 /*---> ACTIONS <------------------------------*/
 /*--------------------------------------------*/
 
-function utensilAction(action){
+function utensilAction(action, utensil){
+	console.log(utensil);
 	switch(action){
 		case 'rinse':
-			faucetRinse();
+			faucetRinse(utensil);
 			break;
 		case 'shake':
-			shakeBowl();
+			shakeBowl(utensil);
 			break;
 		default:
 			alert('ERROR: Utensil Action Not Found.');
 	}
 }
 
-function faucetRinse(){
+function faucetRinse(utensil){
 
 	var faucet = document.getElementById('faucet');
 
@@ -121,11 +122,13 @@ function faucetRinse(){
 
 }
 
-function shakeBowl(){
+function shakeBowl(utensil){
 	var shake = new Howl({
 		urls: ['style/sound/shake.mp3']
 	}).play();
 	setTimeout(function(){
 		shake.stop();
 	}, 2000);
+	console.log(utensil.id);
+	registerDroppable(utensil.id);
 }
