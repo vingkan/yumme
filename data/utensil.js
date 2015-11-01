@@ -11,6 +11,7 @@ function Utensil(config){
 	this.alignment = config['alignment'];
 	this.draggable = config['draggable'];
 	this.droppable = config['droppable'];
+	this.stack = config['stack'];
 	this.state = config['state'];
 	this.action = config['action'];
 }
@@ -56,6 +57,7 @@ Utensil.prototype.toHTML = function(){
 	html += '<div class="' + this.getClasses() + '" ';
 	html += 'id="' + this.id + '" ';
 	html += 'style="width: ' + this.getScaledWidth() + 'vw;';
+	html += 'z-index: ' + this.stack + ';';
 	html += 'height: ' + this.getScaledHeight() + 'vw;';
 	html += 'margin-top: ' + this.getMargin('top') + 'vw;';
 	html += 'margin-left: ' + this.getMargin('left') + 'vw;';

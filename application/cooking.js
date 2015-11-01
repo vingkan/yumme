@@ -48,6 +48,7 @@ var faucet = new Utensil({
 	image: 'style/img/faucet-off.png',
 	draggable: false,
 	droppable: false,
+	stack: 30,
 	state: 'off',
 	action: 'rinse'
 });
@@ -62,10 +63,26 @@ var collander = new Utensil({
 	image: 'style/img/redcollander.png',
 	draggable: true,
 	droppable: true,
+	stack: 25,
 	state: 'static',
 	action: 'shake'
 });
 ingredientsTable.addUtensil(collander);
+
+var bowl = new Utensil({
+	name: 'Bowl',
+	id: 'bowl',
+	width: 95.879,
+	height: 95.879,
+	alignment: 'center',
+	image: 'style/img/bowl.png',
+	draggable: true,
+	droppable: true,
+	stack: 20,
+	state: 'static',
+	action: 'fill'
+});
+plate.addUtensil(bowl);
 
 var recipe = new Recipe({
 	name: "Berry Parfait",

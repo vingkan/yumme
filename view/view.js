@@ -108,7 +108,11 @@ function acceptDrops(targetID){
 			var dropID = $(ui.draggable).attr('id');
 			$(ui.draggable).remove();
 			var toDrop = getIngredient(dropID);
-			if(toDrop.squirt && $('#' + targetID).hasClass('utensil')){
+			var isUtensil = $('#' + targetID).hasClass('utensil');
+			if(isUtensil){
+				$('#' + targetID).click();
+			}
+			if(toDrop.squirt && isUtensil){
 				$(this).append(toDrop.toSquirt());
 			}
 			else{
