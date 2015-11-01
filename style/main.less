@@ -52,16 +52,8 @@ h3{
 p{
 	width: 90%;
 	font-family: @BodyFont;
-	margin: (0.5 * @TextSize) 10%;
+	margin: (0.5 * @TextSize) 5%;
 }
-
-	div.sidebar{
-
-		p{
-			margin: (0.5 * @TextSize) 5%;
-		}
-
-	}
 
 ol, ul{
 	width: 90%;
@@ -230,8 +222,13 @@ div.sidebar{
 	border-right: 2vw solid @PrimaryDark;
 	.AnimateAll();
 	z-index: 75;
-	overflow-y: scroll;
+	//overflow-y: scroll;
 	overflow-x: visible;
+
+	div.container{
+		height: 50vh;
+		overflow-y: scroll;
+	}
 
 	h2{
 		background: @PrimaryColor;
@@ -315,7 +312,7 @@ div.location{
 
 	width: 90vw;
 	height: (250/400) * 90vw;
-	margin: 7.5%;
+	margin: (0.5 * @TextSize) auto;
 	border-top: (0.15 * @TextSize) solid @PrimaryDark;
 
 	span.label{
