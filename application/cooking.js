@@ -51,7 +51,8 @@ var collander = new Utensil({
 	alignment: 'right',
 	image: 'style/img/redcollander.png',
 	draggable: true,
-	state: 'static'
+	state: 'static',
+	action: 'shake'
 });
 sink.addUtensil(collander);
 

@@ -37,11 +37,15 @@ Utensil.prototype.getMargin = function(side){
 		return 0;
 	}
 	else{
-		if(this.alignment === 'center'){
-			return (90 - this.getScaledWidth()) / 2.0;
-		}
-		else{
-			alert('ERROR: Alignment not Defined: See Utensil.js, Utensil.getMargin()');
+		switch(this.alignment){
+			case 'center':
+				return (90 - this.getScaledWidth()) / 2.0;
+				break;
+			case 'right':
+				return (90 - this.getScaledWidth());
+				break;
+			default:
+				alert('ERROR: Alignment not Defined: See Utensil.js, Utensil.getMargin()');
 		}
 	}
 }
@@ -75,6 +79,9 @@ function utensilAction(action){
 	switch(action){
 		case 'rinse':
 			faucetRinse();
+			break;
+		case 'shake':
+			shakeBowl();
 			break;
 		default:
 			alert('ERROR: Utensil Action Not Found.');
@@ -112,4 +119,13 @@ function faucetRinse(){
 		}
 	}, 250);
 
+}
+
+function shakeBowl(){
+	var shake = new Howl({
+		urls: ['style/sound/shake.mp3']
+	}).play();
+	setTimeout(function(){
+		shake.stop();
+	}, 2000);
 }
