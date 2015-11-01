@@ -42,3 +42,16 @@ var faucet = new Utensil({
 	action: 'rinse'
 });
 sink.addUtensil(faucet);
+
+var collander = new Utensil({
+	name: 'Faucet',
+	id: 'collander',
+	width: 133.605,
+	height: 133.605,
+	alignment: 'center',
+	image: 'style/img/redcollander.png',
+	draggable: false,
+	state: 'on',
+	action: 'rinse'
+});
+sink.addUtensil(collander);
