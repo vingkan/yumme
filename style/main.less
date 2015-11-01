@@ -313,13 +313,17 @@ div.location{
 	width: 90vw;
 	height: (250/400) * 90vw;
 	margin: (0.5 * @TextSize) auto;
-	border-top: (0.15 * @TextSize) solid @PrimaryDark;
+	border-top: 1vh solid @PrimaryDark;
+	padding-top: 1vh;
 
 	span.label{
+		position: absolute;
 		background: @PrimaryDark;
-		padding: 0 0.5 * @TextSize;
-		border-bottom: (0.15 * @TextSize) solid white;
+		padding: 0.5 * @TextSize;
+		//padding: 0 0.5 * @TextSize;
+		//border-bottom: (0.15 * @TextSize) solid white;
 		margin: 0 (0.5 * @TextSize);
+		margin-top: -1vh;
 		//Text Style
 		font-family: @DisplayFont;
 		font-size: 0.5 * @TextSize;
