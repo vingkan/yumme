@@ -1,7 +1,7 @@
 var ingredientsTable = new PrepSpace({
 	name: 'My Ingredients',
 	id: 'ingredientsTable',
-	image: 'style/img/plate.png'
+	image: 'style/img/table.png'
 });
 ingredientsTable.addToLocations();
 
