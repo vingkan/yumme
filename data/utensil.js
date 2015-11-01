@@ -8,6 +8,9 @@ function Utensil(config){
 	this.height = parseFloat(config['height']);
 	this.id = config['id'];
 	this.image = config['image'];
+	this.draggable = config['draggable'];
+	console.log(this.draggable)
+	this.state = config['state'];
 	this.action = config['action'];
 }
 
@@ -23,13 +26,20 @@ Utensil.prototype.getScaledHeight = function(){
 	return scaled;
 }
 
+Utensil.prototype.getClasses = function(){
+	var classes = "utensil";
+	classes += " " + this.id + "-" + this.state;
+	return classes;
+}
+
 Utensil.prototype.toHTML = function(){
 	var html = '';
-	html += '<div class="utensil" ';
+	html += '<div class="' + this.getClasses() + '" ';
 	html += 'id="' + this.id + '" ';
 	html += 'style="width: ' + this.getScaledWidth() + 'vw;';
 	html += 'height: ' + this.getScaledHeight() + 'vw;';
-	html += 'background-image: url(' + this.image + ');"';
+	//html += 'background-image: url(' + this.image + ');
+	html += '"';
 	html += 'onclick=utensilAction(&quot;' + this.action + '&quot;);>';
 	html += '<span class="label">' + this.name + '</span>';
 	html += '</div>';
@@ -52,6 +62,29 @@ function utensilAction(action){
 }
 
 function faucetRinse(){
+
 	var faucet = document.getElementById('faucet');
-	faucet.style.backgroundImage = "url('style/img/faucet-on.png')";
+
+	function toggleFaucet(){
+		if($('#faucet').hasClass('faucet-on')){
+			$('#faucet').removeClass('faucet-on');
+			$('#faucet').addClass('faucet-off');
+		}
+		else{
+			$('#faucet').removeClass('faucet-off');
+			$('#faucet').addClass('faucet-on');
+		}
+	}
+
+	var rinse = 0;
+	var intervalID = setInterval(function(){
+		setTimeout(function(){
+			toggleFaucet();
+			rinse++;
+		}, 500);
+		if(rinse > 10){
+			clearInterval(intervalID);
+		}
+	}, 500);
+
 }

@@ -19,6 +19,14 @@ PrepSpace.prototype.toHTML = function(){
 	return html;
 }
 
+PrepSpace.prototype.addUtensil = function(utensil){
+	var prepSpace = document.getElementById(this.id);
+	prepSpace.innerHTML += utensil.toHTML();
+	if(utensil.draggable){
+		$('#' + utensil.id).draggable();
+	}
+}
+
 function acceptDrops(targetID){
 	$('#' + targetID).droppable({
 		accept: '.ingredient',

@@ -39,14 +39,15 @@ var faucet = new Utensil({
 	width: 107.686,
 	height: 213.472,
 	image: 'style/img/faucet-off.png',
+	draggable: false,
+	state: 'on',
 	action: 'rinse'
 });
-document.getElementById('sink').innerHTML += faucet.toHTML();
+sink.addUtensil(faucet);
+//document.getElementById('sink').innerHTML += faucet.toHTML();
 
 $('#' + strawberry.id).draggable();
 $('#' + honey.id).draggable();
-
-$('#' + faucet.id).draggable();
 
 acceptDrops('plate')
 acceptDrops('sink')
