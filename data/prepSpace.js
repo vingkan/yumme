@@ -21,7 +21,7 @@ PrepSpace.prototype.toHTML = function(){
 
 PrepSpace.prototype.addToLocations = function(){
 	document.getElementById('locationSpace').innerHTML += this.toHTML();
-	acceptDrops(this.id);
+	registerDroppable(this.id);
 }
 
 PrepSpace.prototype.addUtensil = function(utensil){

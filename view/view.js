@@ -42,6 +42,7 @@ function toggleMenu(menuID, forceClose){
 		}
 	}
 	enableDrags();
+	enableDrops();
 }
 
 var draggables = [];
@@ -60,6 +61,22 @@ function enableDrags(){
 		console.log($('#' + ingredientID));
 	}
 	console.log("Enable All Drags!");
+}
+
+var droppables = [];
+
+function registerDroppable(ingredientID){
+	droppables.push(ingredientID);
+}
+
+function enableDrops(){
+	var size = droppables.length;
+	var ingredientID = "INITIAL";
+	for(var d = 0; d < size; d++){
+		ingredientID = droppables[d];
+		acceptDrops(ingredientID);
+	}
+	console.log("Enable All Drops!");
 }
 
 function acceptDrops(targetID){
