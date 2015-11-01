@@ -76,3 +76,6 @@ var recipe = new Recipe({
 		"Serve and enjoy!"
 	]
 });
+
+enableDrags();
+enableDrops();
