@@ -17,14 +17,14 @@ var strawberry = new Ingredient({
 	id: 'strawberry',
 	image: 'style/img/strawberry.png'
 });
-document.getElementById('container-cart').innerHTML += strawberry.toHTML();
+//document.getElementById('container-cart').innerHTML += strawberry.toHTML();
 
 var honey = new Ingredient({
 	name: 'Honey',
 	id: 'honey',
 	image: 'style/img/honey.png'
 });
-document.getElementById('container-cart').innerHTML += honey.toHTML();
+//document.getElementById('container-cart').innerHTML += honey.toHTML();
 
 var faucet = new Utensil({
 	name: 'Faucet',
@@ -40,8 +40,8 @@ var faucet = new Utensil({
 sink.addUtensil(faucet);
 //document.getElementById('sink').innerHTML += faucet.toHTML();
 
-$('#' + strawberry.id).draggable();
-$('#' + honey.id).draggable();
+/*$('#' + strawberry.id).draggable();
+$('#' + honey.id).draggable();*/
 
 acceptDrops('plate')
 acceptDrops('sink')

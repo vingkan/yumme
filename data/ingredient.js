@@ -50,6 +50,13 @@ Ingredient.prototype.toResultHTML = function(){
 	html += '</div>';
 	return html;
 }
+
+function addToCart(ingredientID){
+	var cartContainer = document.getElementById('container-cart');
+	var targetIngredient = getIngredient(ingredientID);
+	cartContainer.innerHTML += targetIngredient.toHTML();
+	$('#' + targetIngredient.id).draggable();
+}
 /*--------------------------------------------*/
 /*---> SEARCHING <----------------------------*/
 /*--------------------------------------------*/
