@@ -14,9 +14,9 @@ Recipe.prototype.toHTML = function(){
 	var html = "";
 	html += '<h3>' + this.name + '</h3>';
 	html += '<ol>';
-	var size = instructions.length;
+	var size = this.instructions.length;
 	for(var i = 0; i < size; i++){
-		html += '<li>' + instructions[i] + '</li>';
+		html += '<li>' + this.instructions[i] + '</li>';
 	}
 	html += '</ol>';
 	return html;

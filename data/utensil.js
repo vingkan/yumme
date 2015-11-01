@@ -54,8 +54,12 @@ Utensil.prototype.toHTML = function(){
 	html += 'height: ' + this.getScaledHeight() + 'vw;';
 	html += 'margin-top: ' + this.getMargin('top') + 'vw;';
 	html += 'margin-left: ' + this.getMargin('left') + 'vw;';
-	//html += 'background-image: url(' + this.image + ');
-	html += '"';
+	if(this.state === 'static'){
+		html += 'background-image: url(' + this.image + ')"';
+	}
+	else{
+		html += '"';
+	}
 	html += 'onclick=utensilAction(&quot;' + this.action + '&quot;);>';
 	html += '<span class="label">' + this.name + '</span>';
 	html += '</div>';
@@ -102,7 +106,7 @@ function faucetRinse(){
 			toggleFaucet();
 			rinse++;
 		}, 250);
-		if(rinse > 20){
+		if(rinse > 15){
 			clearInterval(intervalID);
 			runningWater.stop();
 		}

@@ -44,14 +44,29 @@ var faucet = new Utensil({
 sink.addUtensil(faucet);
 
 var collander = new Utensil({
-	name: 'Faucet',
+	name: 'Collander',
 	id: 'collander',
-	width: 133.605,
+	width: 133.450,
 	height: 133.605,
-	alignment: 'center',
+	alignment: 'right',
 	image: 'style/img/redcollander.png',
-	draggable: false,
-	state: 'on',
-	action: 'rinse'
+	draggable: true,
+	state: 'static'
 });
 sink.addUtensil(collander);
+
+var recipe = new Recipe({
+	name: "Berry Parfait",
+	id: "berryparfait",
+	ingredients: [
+		strawberry,
+		honey
+	],
+	instructions: [
+		"Rinse your strawberries and let it drain in the sink.",
+		"Put the yogurt into a bowl.",
+		"Top the yogurt with a handful of strawberries.",
+		"Drizzle the honey over your strawberries.",
+		"Serve and enjoy!"
+	]
+});
