@@ -106,4 +106,4 @@ var recipe = new Recipe({
 enableDrags();
 enableDrops();
 
-selectRecipe(recipe.id)
+//selectRecipe(recipe.id)

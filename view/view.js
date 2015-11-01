@@ -96,14 +96,15 @@ function enableDrops(){
 	var ingredientID = "INITIAL";
 	for(var d = 0; d < size; d++){
 		ingredientID = droppables[d];
-		acceptDrops(ingredientID);
+		
+		acceptDrops(ingredientID, '.ingredient, .utensil');
 	}
 	//console.log("Enable All Drops!");
 }
 
-function acceptDrops(targetID){
+function acceptDrops(targetID, classes){
 	$('#' + targetID).droppable({
-		accept: '.ingredient, .utensil',
+		accept: classes,
 		drop: function(event, ui){
 			//console.log($(ui.draggable).hasClass('utensil'))
 			if($(ui.draggable).hasClass('ingredient')){

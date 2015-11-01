@@ -22,7 +22,7 @@ PrepSpace.prototype.toHTML = function(){
 
 PrepSpace.prototype.addToLocations = function(){
 	document.getElementById('locationSpace').innerHTML += this.toHTML();
-	registerDroppable(this.id + '-container');
+	//registerDroppable(this.id + '-container');
 }
 
 PrepSpace.prototype.addUtensil = function(utensil){
