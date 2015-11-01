@@ -24,7 +24,7 @@
 /*---> TEXT <---------------------------------*/
 /*--------------------------------------------*/
 
-h1, h2, h3, h4, h5, h6, p, span{
+h1, h2, h3, h4, h5, h6, p, span, ol{
 	font-family: @BodyFont;
 	font-size: @TextSize;
 	text-align: center;
@@ -40,17 +40,35 @@ h1{
 }
 
 h2{
-	font-size: 1.35 * @TextSize;
+	font-size: 1.50 * @TextSize;
 }
 
 h3{
-	font-size: 1.10 * @TextSize;
+	font-size: 1.35 * @TextSize;
+	margin: (0.5 * @TextSize) auto;
 }
 
 p{
 	width: 90%;
 	font-family: @BodyFont;
 	margin: (0.5 * @TextSize) 5%;
+}
+
+ol{
+	width: 90%;
+	margin: 0 auto;
+	list-style-type: square;
+	list-style-position: inside;
+}
+
+li{
+	text-align: left;
+	color: @Charcoal;
+}
+
+li.highlighted{
+	font-weight: bold;
+	color: @PrimaryDark;
 }
 
 /*--------------------------------------------*/
@@ -168,7 +186,7 @@ div.sidebar{
 
 	position: fixed;
 	top: 0;	
-	width: 50vw;
+	width: 70vw;
 	height: 100vh;
 	background: white;
 	color: @PrimaryDark;
@@ -184,10 +202,12 @@ div.sidebar{
 
 	button.closeSideBar{
 		position: absolute;
-		top: 90vh - 5vw;
-		left: 10vw;
+		top: 90vh;
+		left: 20vw;
 		width: 30vw;
-		height: 10vh;
+		height: 7.5vh;
+		line-height: 7.5vh;
+		font-size: 0.5 * @TextSize;
 		background: @PrimaryColor;
 	}
 
@@ -198,7 +218,7 @@ div.sidebar{
 	}
 
 	div.sidebar-close{
-		left: -52vw;
+		left: -72vw;
 	}
 
 @headerHeight: 2.0 * @TextSize;
