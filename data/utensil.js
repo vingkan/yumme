@@ -78,7 +78,7 @@ Utensil.prototype.toHTML = function(){
 /*---> ACTIONS <------------------------------*/
 /*--------------------------------------------*/
 
-function utensilAction(action, utensil){
+function utensilAction(action, utensil, extraArgs){
 	//console.log(utensil);
 	switch(action){
 		case 'rinse':
@@ -88,7 +88,7 @@ function utensilAction(action, utensil){
 			shakeBowl(utensil);
 			break;
 		case 'fill':
-			fillBowl(utensil);
+			fillBowl(utensil, extraArgs);
 			break;
 		default:
 			alert('ERROR: Utensil Action Not Found.');
@@ -137,6 +137,12 @@ function shakeBowl(utensil){
 	registerDroppable(utensil.id);
 }
 
-function shakeBowl(utensil){
-	
+function fillBowl(utensil, extraArgs){
+	var squirt = new Howl({
+		urls: ['style/sound/squirt.mp3']
+	}).play();
+	setTimeout(function(){
+		squirt.stop();
+	}, 2000);
+	console.log(extraArgs)
 }

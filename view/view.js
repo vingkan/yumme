@@ -110,7 +110,9 @@ function acceptDrops(targetID){
 			var toDrop = getIngredient(dropID);
 			var isUtensil = $('#' + targetID).hasClass('utensil');
 			if(isUtensil){
-				$('#' + targetID).click();
+				//$('#' + targetID).click();
+				console.log('hello')
+				utensilAction('fill', $('#' + targetID), ui.draggable.html());
 			}
 			if(toDrop.squirt && isUtensil){
 				$(this).append(toDrop.toSquirt());
