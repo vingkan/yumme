@@ -10,6 +10,7 @@ function Utensil(config){
 	this.image = config['image'];
 	this.alignment = config['alignment'];
 	this.draggable = config['draggable'];
+	this.droppable = config['droppable'];
 	this.state = config['state'];
 	this.action = config['action'];
 }
@@ -76,7 +77,7 @@ Utensil.prototype.toHTML = function(){
 /*--------------------------------------------*/
 
 function utensilAction(action, utensil){
-	console.log(utensil);
+	//console.log(utensil);
 	switch(action){
 		case 'rinse':
 			faucetRinse(utensil);
@@ -127,6 +128,6 @@ function shakeBowl(utensil){
 	setTimeout(function(){
 		shake.stop();
 	}, 2000);
-	console.log(utensil.id);
+	//console.log(utensil.id);
 	registerDroppable(utensil.id);
 }

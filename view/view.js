@@ -79,10 +79,10 @@ function enableDrags(){
 	for(var d = 0; d < size; d++){
 		ingredientID = draggables[d];
 		$('#' + ingredientID).draggable();
-		console.log('draggable: ' + '#' + ingredientID);
-		console.log($('#' + ingredientID));
+		//console.log('draggable: ' + '#' + ingredientID);
+		//console.log($('#' + ingredientID));
 	}
-	console.log("Enable All Drags!");
+	//console.log("Enable All Drags!");
 }
 
 var droppables = [];
@@ -98,7 +98,7 @@ function enableDrops(){
 		ingredientID = droppables[d];
 		acceptDrops(ingredientID);
 	}
-	console.log("Enable All Drops!");
+	//console.log("Enable All Drops!");
 }
 
 function acceptDrops(targetID){

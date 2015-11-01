@@ -31,12 +31,6 @@ var honey = new Ingredient({
 	image: 'style/img/honey.png'
 });
 
-var honey = new Ingredient({
-	name: 'Honey',
-	id: 'honey1',
-	image: 'style/img/honey.png'
-});
-
 var faucet = new Utensil({
 	name: 'Faucet',
 	id: 'faucet',
@@ -45,6 +39,7 @@ var faucet = new Utensil({
 	alignment: 'center',
 	image: 'style/img/faucet-off.png',
 	draggable: false,
+	droppable: false,
 	state: 'off',
 	action: 'rinse'
 });
@@ -58,10 +53,11 @@ var collander = new Utensil({
 	alignment: 'right',
 	image: 'style/img/redcollander.png',
 	draggable: true,
+	droppable: true,
 	state: 'static',
 	action: 'shake'
 });
-sink.addUtensil(collander);
+ingredientsTable.addUtensil(collander);
 
 var recipe = new Recipe({
 	name: "Berry Parfait",

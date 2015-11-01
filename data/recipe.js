@@ -62,6 +62,10 @@ function selectRecipe(recipeID){
 	var selectedRecipe = getRecipe(recipeID);
 	recipeContainer.innerHTML = selectedRecipe.toHTML();
 	toggleSideBar('recipe');
+	var size = this.ingredients.length;
+	for(var i = 0; i < size; i++){
+		addToCart(this.ingredients[i].id);
+	}
 }
 
 Recipe.prototype.getInstructionsAsBlob = function(){
